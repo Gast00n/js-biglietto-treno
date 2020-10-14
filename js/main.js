@@ -14,9 +14,20 @@ var eta = parseInt( prompt('Inserisci la tua età') );
 
 //  Controllo età
 
+if (isNaN(eta)) {
+    do eta = parseInt( prompt('Età non valida, inserisci età') );
+    while (isNaN(eta));
+}
+
 var chilo = parseInt( prompt('Inserire il numero di chilometri da fare') );
 
 //Controllo valore chilometri
+
+if (isNaN(chilo)) {
+    do chilo = parseInt( prompt('Distanza non valida, inserisci distanza') );
+    while (isNaN(chilo));
+}
+
 
 document.getElementById('chilo').innerHTML = chilo;
 
