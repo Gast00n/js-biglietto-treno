@@ -7,9 +7,6 @@ var prezzo = 0.21;
 var nome = prompt('Inserisci il tuo nome');
 
 document.getElementById('name').innerHTML = nome;
-
-
-
 var eta = parseInt( prompt('Inserisci la tua età') );
 
 //  Controllo età
@@ -34,17 +31,20 @@ document.getElementById('chilo').innerHTML = chilo;
 // Costo biglietto per KM
 
 var costoKm = chilo * prezzo;
-var sconto20 = (costoKm / 100) * 20;
-var sconto40 = (costoKm / 100) * 40;
+var sconto20 = costoKm * 0.2;
+var sconto40 = costoKm * 0.4;
+
 
 // Calcolo di eventuali sconti
 
 if (eta < 18) {
+    sconto20.toFixed(2);
     var costoFinale = costoKm - sconto20;
     document.getElementById('costo').innerHTML = costoFinale;
     document.getElementById('tariffaInt').innerHTML = '(la tariffa intera per la sua tratta è pari a:<strong> ' + costoKm + '€</strong>)';
     document.getElementById('sconto').innerHTML = 'A cui è stato applicato uno sconto del <strong>20%</strong> dedicato ai viaggiatori di età <em>inferiore ai 18 anni</em>!';
 } else if ( eta >= 65) {
+    sconto40.toFixed(2);
     var costoFinale = costoKm - sconto40;
     document.getElementById('costo').innerHTML = costoFinale;
     document.getElementById('tariffaInt').innerHTML = '(la tariffa intera per la sua tratta è pari a:<strong> ' + costoKm + '€</strong>)';
